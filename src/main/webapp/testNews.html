@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3响应式垂直手风琴菜单DEMO演示</title>
+
+    <link rel="stylesheet" type="text/css" href="css/plugins/accordion.menu.css">
+    <script src="js/common/jquery-2.1.1.js"></script>
+<script src="js/navigator.info.js"></script>
+</head>
+<body onbeforeunload="closeView()" onload="openView()">
+
+<div class="container" id="containerModule">
+<div><button v-on:click="changeData()">change</button></div>
+    <div class="accordion">
+        <dl>
+            <div v-for="item in allList">
+                <dt><a v-bind:href="item.domId" aria-expanded="false" v-bind:aria-controls="item.did"
+                       class="accordion-title accordionTitle js-accordionTrigger" v-text="item.title"></a>
+                </dt>
+                <dd class="accordion-content accordionItem is-collapsed" v-bind:id="item.did" aria-hidden="true">
+                    <p v-text="item.desc"></p>
+                </dd>
+            </div>
+        </dl>
+    </div>
+
+    <div>
+        <button onclick="allinfo()">getNavInfo</button>
+        <div id="windowInfo"></div>
+        <div>--------------------------------</div>
+        <div id="navInfo"></div>
+    </div>
+<div>
+    <button onclick="pcInfo()">allPCInfo</button>
+    <button id="ipbtn">ipInfo</button>
+    <div id="allPCInfo"></div>
+</div>
+    <div>
+        <button onclick="getReferrer()" title="上级url">getReferrer</button>
+    </div>
+
+
+</div>
+<script src="js/common/vue.js"></script>
+<script src="js/mycommon/function.common.js"></script>
+<script src="js/testNews.js"></script>
+<script type="text/javascript">
+    function openView() {
+//        alert("open View");
+        console.log("open View");
+    }
+   function closeView() {
+//       alert("close View");
+       console.log("close View");
+//       window.open("http://www.baidu.com","_blank");
+   }
+</script>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function(){
+        $("#ipbtn").click(function(){
+            var url = 'http://chaxun.1616.net/s.php?type=ip&output=json&callback=?&_='+Math.random();
+            $.getJSON(url, function(data){
+                $("#allPCInfo").html("显示：IP【"+data.Ip+"】 地址【"+data.Isp+"】 浏览器【"+data.Browser+"】 系统【"+data.OS+"】");
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

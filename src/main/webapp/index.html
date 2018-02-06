@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>可桉数据</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="img/logo-ico.png" type="image/png">
+    <link rel="stylesheet" href="css/mycommon/loading-animate.css">
+    <link rel="stylesheet" href="css/common/bootstrap.min.css">
+    <link href="css/mycommon/common-animate.css" rel="stylesheet">
+    <link href="css/business/index.css" rel="stylesheet">
+    <link href="css/style.common.css" rel="stylesheet">
+    <script src="js/common/jquery-2.1.1.js"></script>
+    <script src="js/common/md5.js"></script>
+    <script src="js/mycommon/function.common.js"></script>
+</head>
+<body>
+<div>
+    <div class="earth-img-containter" style="position:absolute;width:100%;height:100%;">
+        <img class="earth-img"  src="img/index-center.png">
+        <canvas id="star-canvas"></canvas>
+    </div>
+    <div class="nav-header">
+        <div class="brand pull-left">
+            <img src="img/kdlogo-1.png">
+        </div>
+        <div class="pull-right">
+            <a class="login-link" onclick="showLoginView()">登录</a>
+        </div>
+    </div>
+    <div class="Bomb-box" style="display:none;">
+        <div class="bg"></div>
+        <div class="loginColumns text-center loginscreen animated fadeInDown">
+            <!--<div style="position:relative;text-align: right;top:23px;">-->
+                <!--<button type="button" class="btn btn-trans btn-sm btn-close-ico" onclick="hideLoginView()"><span-->
+                        <!--class="glyphicon glyphicon-remove"></span></button>-->
+            <!--</div>-->
+            <div class="input-side">
+                <div class="logo-row">
+                    <img src="img/index-logo.png">
+                </div>
+                <div class="form-group">
+                    <div class="form-input-line">
+                        <!--<label class="form-label">用户名</label>-->
+                        <input type="text" autocomplete="noff" id="unameIpt" value=""
+                               class="form-control" placeholder="用户名" required="">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom:25px;">
+                    <div class="form-input-line">
+                        <!--<label class="form-label">密码</label>-->
+                        <input type="password" autocomplete="noff" id="pwdIpt" value=""
+                               class="form-control" placeholder="密码" required="">
+                    </div>
+                </div>
+                <div class="form-group form-control-warning-group" style="display:none;">
+                    <label id="warning" class="form-control form-control-warning" style="margin-bottom:10px;">请输入用户名密码</label>
+                </div>
+                <div class="form-group form-group-btn">
+                    <button class="btn btn-primary block" onclick="login()">登录</button>
+                    <!--<button class="btn btn-primary block" onclick="hideLoginView()">Cancel</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/mycommon/navigator.info.js"></script>
+<script src="js/mycommon/common.data.js"></script>
+<script src="js/business/index/index.canvas.js"></script>
+<script src="js/business/index/index.js"></script>
+</body>
+</html>
