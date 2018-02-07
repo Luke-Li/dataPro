@@ -10,7 +10,7 @@ import redis.clients.jedis.JedisPoolConfig;
 public final class RedisUtil {
 	public static Logger log = LoggerFactory.getLogger(RedisUtil.class);
     //Redis服务器IP
-    private static String ADDR = "106.14.152.222"; //datanode-01
+    private static String ADDR = "47.100.50.217"; //datamaster
 
     //Redis的端口号
     private static int PORT = 6379;
